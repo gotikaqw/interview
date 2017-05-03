@@ -1,0 +1,41 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+<body background=fon.jpg id=robots >
+<center>
+<h3>Меню</h3>
+</center>
+<a href=form.html>Добавить новое интервью</a>
+<center>
+<h4>Расшифровка интервью</h4>
+<audio src = audio.mp3 controls id=music></audio>
+<hr>
+<textarea id=qwerty>
+</textarea>
+<script>
+robots.onkeydown = function( e ) {
+  if( e.keyCode === 13 ) { AudioStation();
+}};
+function AudioStation() {
+if (music.paused) {
+music.play();
+}
+else {
+music.pause();
+qwerty.focus();
+var sec=music.currentTime ;
+var minuts=sec/60 ;
+var hours=minuts/60 ;
+hours=Math.round(hours) ;
+minuts=Math.round(minuts) ; 
+sec=Math.round(sec) ;
+qwerty.value+="\n"+hours+":"+minuts+":"+sec ;
+ }
+}
+
+</script>
+</center>
+</body>
+</html>
+
